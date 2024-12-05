@@ -3,32 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <script src="https://kit.fontawesome.com/3a49d7d9fe.js" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
   rel="stylesheet"
    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
     crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" 
+    rel="stylesheet">
   
-  <title>Frontend Mentor | Results summary component</title>
+  <title>Results summary component</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
    *{
     box-sizing:border-box;
    }
-   body{
+   
+   
+body{
     background-color: rgb(230, 245, 240);
+    font-family: 'Roboto' , sans serif ;
    }
-   @font-face {
-  font-family: 'MyCustomFont'; /* The name you will use in CSS */
-  src: url('fonts/my-custom-font.woff2') format('woff2'), 
-       url('fonts/my-custom-font.woff') format('woff'); /* Add multiple formats for better compatibility */
-  font-weight: normal; /* Optional: Define the font weight */
-  font-style: normal; /* Optional: Define the font style */
-}
+
     .container-fluid{
       margin-top:100px;
-      width:35rem;
+      width:42%;
       border:1px solid rgb(230, 245, 240) ;
       border-radius: 25px;
       padding:0;
@@ -38,13 +39,19 @@
       
      
     }
+    
     #result{
       background-image: linear-gradient(to bottom, hsl(225, 91%, 39%), hsl(236, 87%, 40%));
-
+      height:346px;
       border-radius:25px;
     }
     h6{
       margin-top:1.5rem;
+      color:rgb(155, 116, 247);
+    }
+    #score-m{
+      color:rgb(155, 116, 247);
+      font-size:0.8rem;
     }
     .percent-circ{
       margin:1.5rem auto;
@@ -53,66 +60,131 @@
       border:none;
       border-radius: 50%;
     }
+    #sd-card{
+    width:95%;  
+    border:none ;
+    border-radius:0; 
+    }
+    h5{
+      font-weight: extra-bold;
+    }
     .summary{
       border-radius: 10px;
       margin-bottom:20px;
+      font-weight:bold;
+      
  
+    }
+    #react{
+      background-color: rgba(173, 27, 27, 0.176);
+      font-weight:bold;
+      color: rgb(143, 39, 39);
+      font-size:0.8rem;
+      border-radius:5px;
+      margin-left:5px;
+      
+    }
+    #mem{
+      background-color: rgba(255, 238, 0, 0.377);
+      font-weight:bold;
+      color: rgb(189, 173, 4);
+      font-size:0.8rem;
+      border-radius:5px;
+    }
+    #verbal{
+      background-color: rgba(26, 255, 0, 0.281);
+      font-weight:bold;
+      color: rgb(5, 103, 34);
+      font-size:0.8rem;
+      border-radius:5px;
+    }
+    #visual{
+      background-color: rgba(0, 38, 255, 0.281);
+      font-weight:bold;
+      color: rgb(5, 21, 103);
+      font-size:0.8rem;
+      border-radius:5px;
     }
     .over-100{
       float:right;
     }
+    .last-percent{
+      color:rgb(123, 118, 118)
+    }
     .btn{
      margin: 10px auto;
      width:100%;
+     padding:10px;
      border-radius:20px;
+     background-color: #02031b;
+     color:white;
+     font-weight:bold;
+     font-size:0.8rem;
     }
-    #sd-card{
-    width:25rem;  
-    border:none ;
-    border-radius:0; 
+    .btn:hover{
+      color:rgb(25, 25, 96)
     }
+   
    
     
   </style>
 </head>
 <body>
-        <div class="container-fluid d-flex  ">
-            <div class="card text-center text-white" id="result" style="width: 25rem; ">
-            <h6>Your Result</h6>
-            <div class="percent-circ">
-              <h1>76</h1>
-              <p>of 100</p>
-            </div>
-              <div class="card-body">
-                <h5 class="card-title">Great</h5>
-                <p class="card-text">You scored higher than 65% of the people who have taken these tests.</p>
-              
-              </div>
-            </div>
-              <div class="card " id="sd-card">
-                <div class="card-body">
-                  <h5 class="card-title mb-4">Summary</h5>
-                  <p class="card-text">
-                    <div class="col p-2 mb-3 bg-danger summary">
-                      <span>Reaction</span>
-                      <span class="over-100">80 / 100</span>
-                    </div>
-                    <div class="col p-2 mb-3 bg-warning summary">
-                      <span>Memory</span>
-                      <span class="over-100">92 / 100</span>
-                    </div>
-                    <div class="col p-2 mb-3 bg-info summary">
-                      <span>Verbal</span>
-                      <span class="over-100">61 / 100</span>
-                    </div>
-                    <div class="col p-2 mb-3 bg-dark  summary" style="color:white">
-                      <span>Visual</span>
-                      <span class="over-100">72 / 100</span>
-                    </div>
-                  </p>
-                  <a href="#" class="btn btn-primary">Continue</a>
+        <div class="container-fluid d-grid   ">
+            <div class="row h-100">
+                <div class="col-12 col-md-6  ">
+                            <div class="card  text-center text-white" id="result" >
+                            <h6>Your Result</h6>
+                            <div class="percent-circ">
+                            <h1>76</h1>
+                            <p style="color:rgb(123, 70, 248)">of 100</p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Great</h5>
+                                <p class="card-text"  id="score-m">You scored higher than 65% of the people who have taken these tests.</p>
+                            
+                            </div>
+                            </div>
                 </div>
-              </div>
+                <div class="col-12 col-md-6  " style="margin-left:0;">
+                            <div class="card " id="sd-card">
+                                <div class="card-body">
+                                <h5 class="card-title mb-4" style="font-weight: bold;">Summary</h5>
+                                <p class="card-text">
+                                    <div class="col p-2 mb-3 " id="react">
+                                    <span><i class="fa-solid fa-bolt-lightning"  style="margin-right: 10px;"></i>Reaction</span>
+                                    <span class="over-100">
+                                            <span style="color:black">80</span> 
+                                            <span class="last-percent">/ 100</span> 
+                                    </span>
+                                    </div>
+                                    <div class="col p-2 mb-3" id="mem">
+                                    <span><i class="fa-solid fa-brain"  style="margin-right: 10px;"></i>Memory</span>
+                                    <span class="over-100">
+                                        <span style="color:black">92</span> 
+                                        <span class="last-percent">/ 100</span>
+                                    </span>
+                                    </div>
+                                    <div class="col p-2 mb-3  summary" id="verbal">
+                                    <span><i class="fa-regular fa-comment"  style="margin-right: 10px;"></i>Verbal</span>
+                                    <span class="over-100">
+                                        <span style="color:black">61</span>
+                                        <span class="last-percent">/ 100</span>
+                                    </span>
+                                    </div>
+                                    <div class="col p-2 mb-3  summary" id="visual" >
+                                    <span><i class="fa-solid fa-eye"  style="margin-right: 10px;"></i></i>Visual</span>
+                                    <span class="over-100">
+                                        <span style="color:black">72</span>
+                                        <span class="last-percent">/ 100</span>
+                                    </span>
+                                    </div>
+                                </p>
+                                <a href="#" class="btn ">Continue</a>
+                                </div>
+                            </div>
+                        </div>
+                </div>
       </div>
  
         
